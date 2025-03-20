@@ -1,0 +1,175 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+    margin: 0;
+}
+
+body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+    text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+    isolation: isolate;
+}
+
+input,
+textarea,
+select,
+button {
+    width: 150px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Plex';
+    src: url('Fonts/IBMPlexSerif-LightItalic.woff2') format('woff2'),
+        url('Fonts/IBMPlexSerif-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+html {
+    font-size: 16px;
+    font-family: 'Plex', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(216, 214, 214);
+    ;
+}
+
+.container {
+    display: flex;
+    width: 1080px;
+    height: 610px;
+    background-color: rgb(78, 78, 78);
+    border: 2px solid rgb(187, 185, 185);
+    border-radius: 8px;
+}
+
+.container-img {
+
+    display: flex;
+    align-items: flex-end;
+
+    width: 50%;
+    background-image: url("images/HideThePain.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-color: aliceblue;
+
+
+}
+
+.footer-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    background-color: rgba(192, 192, 190, 0.5);
+
+}
+
+.footer-img>img {
+    width: auto;
+    height: 90%;
+
+}
+
+.footer-img>h2 {
+    font-size: 1.6rem;
+    color: white;
+    margin-left: 10px;
+}
+
+
+.container-form {
+    width: 50%;
+}
+
+.form-header {
+    height: 30%;
+    width: 100%;
+    background-color: rgb(233, 232, 231);
+    display: flex;
+    align-items: flex-end;
+    font-size: 0.9rem;
+    padding: 15px 25px;
+
+
+}
+
+.form-body {
+    height: 40%;
+    width: 100%;
+    background-color: rgb(197, 196, 196);
+    padding: 15px 25px;
+
+}
