@@ -72,10 +72,58 @@ input,
 textarea,
 select,
 button {
-    width: 150px;
+    width: 300px;
+    height: 35px;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+
+    font-family: inherit;
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+input {
+    appearance: none;
+}
+
+
+
+input:required,
+input:valid {
+    border: 1px solid black;
+}
+
+input:optional {
+    border: 1px solid silver;
+}
+
+
+input:invalid {
+    border: 1px solid red;
+}
+
+
+input:focus {
+    box-shadow: 0px 0px 5px 2px black;
+
+}
+
+input+span {
+    position: relative;
+}
+
+input:required+span::after {
+    font-size: 1rem;
+    position: absolute;
+    content: "required";
+    color: white;
+    background-color: black;
+    padding: 5px 10px;
+    top: -44px;
+    left: -75px;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 4px;
 }
 
 @font-face {
@@ -100,76 +148,193 @@ body {
     justify-content: center;
     align-items: center;
     background-color: rgb(216, 214, 214);
-    ;
+
 }
 
 .container {
     display: flex;
-    width: 1080px;
-    height: 610px;
+    width: 100%;
+    height: 100vh;
     background-color: rgb(78, 78, 78);
     border: 2px solid rgb(187, 185, 185);
     border-radius: 8px;
 }
 
-.container-img {
+.img-container {
 
-    display: flex;
-    align-items: flex-end;
 
-    width: 50%;
-    background-image: url("images/HideThePain.png");
-    background-position: center;
+    position: relative;
+    width: 40%;
+    background-image: url("images/wall.jpg");
+    background-size: cover;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-color: aliceblue;
-
-
+    background-position: center;
 }
 
-.footer-img {
+.img-banner {
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
+    top: 200px;
     width: 100%;
-    height: 80px;
-    background-color: rgba(192, 192, 190, 0.5);
-
+    height: 140px;
+    background-color: rgba(53, 53, 53, 0.5);
 }
 
-.footer-img>img {
-    width: auto;
-    height: 90%;
 
+
+.logo>img {
+    height: 110px;
 }
 
-.footer-img>h2 {
-    font-size: 1.6rem;
+.img-title {
     color: white;
-    margin-left: 10px;
+    font-size: 3rem;
+    font-weight: bold;
 }
 
+.form-container {
 
-.container-form {
-    width: 50%;
+    width: 60%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
 }
 
 .form-header {
     height: 30%;
-    width: 100%;
-    background-color: rgb(233, 232, 231);
+
     display: flex;
-    align-items: flex-end;
-    font-size: 0.9rem;
-    padding: 15px 25px;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.6rem;
+    font-weight: 500;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, Helvetica, sans-serif;
+    background-color: whitesmoke;
+    padding-left: 70px;
 
 
 }
 
-.form-body {
-    height: 40%;
-    width: 100%;
-    background-color: rgb(197, 196, 196);
-    padding: 15px 25px;
+.form-header>p {
+    width: 70%;
+}
 
+.form-header p:last-child {
+    margin-top: 30px;
+}
+
+.form-body {
+    height: 45%;
+    background-color: white;
+    padding-left: 70px;
+    box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.form-body>h2 {
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.registration {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.form-row {
+    display: flex;
+    gap: 3rem;
+    flex-flow: row wrap;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.info-text {
+    margin-bottom: 30px;
+    font-size: 1.3rem;
+}
+
+.form-footer {
+    height: 25%;
+    width: 100%;
+    background-color: whitesmoke;
+    z-index: 9;
+    display: flex;
+    flex-direction: column;
+    padding-left: 70px;
+    gap: 20px;
+
+}
+
+.form-footer>p {
+    font-size: 1.3rem;
+}
+
+#submit-button {
+    height: 0;
+    padding: 0;
+    opacity: 0;
+}
+
+label[for="submit-button"] {
+    width: 275px;
+    height: 55px;
+    padding: 10px 20px;
+    margin-top: 30px;
+    box-shadow: 1px 1px 3px #ccc;
+    background: #596D48;
+    border: 1px solid rgb(169 169 169);
+    border-radius: 5px;
+    text-align: center;
+    line-height: 1.5;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, Helvetica, sans-serif;
+    font-size: 1.3rem;
+}
+
+label[for="submit-button"]:hover {
+    background: #7c9764;
+}
+
+label[for="submit-button"]:active {
+    box-shadow: inset 1px 1px 3px #ccc;
+    background: #83d33d;
+}
+
+p>a {
+    text-decoration: none;
+    color: #596D48;
+    font-size: 1.4rem;
+}
+
+.credits {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+
+    bottom: 1px;
+}
+
+.credits {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, Helvetica, sans-serif;
+
+}
+
+.credits>a {
+    margin-left: 5px;
+    text-decoration: none;
+    color: white;
 }
